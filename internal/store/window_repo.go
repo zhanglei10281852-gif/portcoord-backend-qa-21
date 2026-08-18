@@ -64,9 +64,6 @@ func scanWindow(sc scanner) (*domain.BerthingWindow, error) {
 	w.EffectiveAt = parseTime(effectiveAt)
 	w.DeadlineAt = parseTime(deadlineAt)
 	w.ResponsibleParty = domain.PartyRole(partyStr)
-	if w.ShipName != "" {
-		w.ShipName = ""
-	}
 	w.Status = domain.WindowStatus(statusStr)
 	w.CreatedAt = parseTime(createdAt)
 	w.UpdatedAt = parseTime(updatedAt)

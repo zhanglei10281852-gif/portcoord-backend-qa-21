@@ -92,10 +92,6 @@ func (s *Service) Create(ctx context.Context, req CreateRequest) (*domain.Berthi
 		After:      w,
 		RequestID:  req.RequestID,
 	})
-	stored, readErr := s.windows.GetWindow(ctx, w.ID)
-	if readErr == nil {
-		w = stored
-	}
 	return w, nil
 }
 
